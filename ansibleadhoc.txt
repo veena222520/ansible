@@ -1,0 +1,22 @@
+Ansible adhoc  command syntax
+
+ansible <pattern> -m <module> -a "<module options>" -i <inventory>
+Where:
+
+<pattern> is the IP address, hostname, alias or group name,
+-m module is name of the module to be used,
+-a "<module options>" sets options for the module, and
+-i <inventory> is the inventory of the managed nodes.
+
+
+
+how to create aplaybook
+
+1.first create ainventory file "myinventory.ini"
+add the things youy want to execute
+2.ping the inventory file by adhoc commandansible "mynginx -m ping -i myinventory.ini"
+3.create a yaml file "nginx-playbook.yaml"
+4. do vi nginx-playbook.yaml
+    write the program to execute after doing edits
+5.create a html file to execute "echo 'Hello World!' > index.html"
+6..execute the playbook "ansible-playbook nginx-playbook.yaml -i myinventory.ini"
